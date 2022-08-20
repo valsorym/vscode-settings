@@ -1,0 +1,173 @@
+{
+    "[yaml]": {
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.detectIndentation": false,
+        "editor.rulers": [
+            0
+        ]
+    },
+    "[typescript]": {
+        "editor.tabSize": 4
+    },
+    "[javascript]": {
+        "editor.rulers": [
+            79
+        ]
+    },
+    "prettier.useTabs": true,
+    "go.lintOnSave": "file",
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "go.docsTool": "gogetdoc",
+    "[go]": {
+        "editor.insertSpaces": true,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "golang.go",
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+    "go.toolsEnvVars": {
+        "GO11MODULE": "on"
+    },
+    "go.lintTool": "revive",
+    // "go.lintFlags": [
+    //     "--disable-all",
+    //     "--enable=golint",
+    //     "--exclude=exported (const|type|method|function) [\\w.]+ should have comment (\\(or a comment on this block\\) )?or be unexported",
+    //     "--exclude=don't use ALL_CAPS in Go names; use CamelCase",
+    //     "--exclude=(func|const|struct field|) \\w+ should be \\w+"
+    // ],
+    "[json]": {
+        "editor.rulers": [
+            0
+        ]
+    },
+    "[markdown]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wrappingIndent": "same",
+        "editor.wordWrapColumn": 79
+    },
+    "[py]": {
+        "editor.tabSize": 4
+    },
+    "[html]": {
+        "editor.rulers": [
+            0
+        ]
+    },
+    "[django-html]": {
+        "editor.rulers": [
+            79
+        ]
+    },
+    "[sql]": {
+        "editor.rulers": [
+            0
+        ]
+    },
+    "[css]": {
+        "editor.rulers": [
+            0
+        ]
+    },
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "editor.tabSize": 4,
+    "editor.fontSize": 15,
+    "editor.lineHeight": 1.2,
+    "editor.fontFamily": "Source Code Pro", // https://fonts.google.com/specimen/Source%20Code%20Pro
+    //"editor.fontFamily": "Fira Code", // https://fonts.google.com/specimen/Fira+Code
+    // "editor.fontFamily": "Montserrat Alternates", // https://fonts.google.com/specimen/Montserrat+Alternates
+    // "editor.fontFamily": "Anonymous Pro", // https://fonts.google.com/specimen/Anonymous+Pro
+    "workbench.startupEditor": "none",
+    "editor.rulers": [
+        79
+    ],
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#495364", //"#40c3ff",
+        "editor.lineHighlightBackground": "#32353dff",
+        "editor.lineHighlightBorder": "#00000000",
+        "editorHint.foreground": "#ff000000",
+        "editorHint.border": "#00ff66"
+        //"editorHint.border": "#535855",
+    },
+    "editor.hideCursorInOverviewRuler": true,
+    "workbench.tree.indent": 22,
+    "editor.insertSpaces": true,
+    "terminal.integrated.fontSize": 14,
+    "python.analysis.extraPaths": [
+        "/usr/local/lib/python2.7/site-packages/",
+        "/usr/local/lib/python3.6/site-packages/",
+        "/usr/local/lib/python3.7/site-packages/",
+        "/usr/local/lib/python3.9/site-packages/",
+        "/usr/local/lib/python3.10/site-packages/"
+    ],
+    "workbench.colorTheme": "One Monokai",
+    "workbench.iconTheme": "atom-icons",
+    "cSpell.userWords": [
+        "goloop",
+        "NOSQL",
+        "Sotho",
+        "Tracef",
+        "Traceln",
+        "горутин",
+        "слайс",
+        "Слайси",
+        "слайсі",
+        "слайсу"
+    ],
+    "cSpell.language": "en,uk",
+    "cSpell.diagnosticLevel": "Hint",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoSurround": "never",
+    "workbench.editor.enablePreview": false,
+    "security.workspace.trust.untrustedFiles": "open",
+    "redhat.telemetry.enabled": true,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "diffEditor.wordWrap": "off",
+    "editor.hover.enabled": false,
+    "editor.quickSuggestionsDelay": 1000,
+    "editor.parameterHints.enabled": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.restoreUndoStack": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.vscode": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/.archive.*": true,
+        "**/.del.*": true
+    },
+    "importSorter.importStringConfiguration.tabSize": 4,
+    "importSorter.generalConfiguration.sortOnBeforeSave": true,
+    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 79,
+    "importSorter.sortConfiguration.removeUnusedImports": true,
+    "importSorter.importStringConfiguration.numberOfEmptyLinesAfterAllImports": 2,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "html.autoClosingTags": false,
+    "html.format.wrapAttributes": "preserve-aligned",
+    "html.format.enable": false,
+    "html.format.wrapLineLength": 100,
+    "editor.detectIndentation": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "sql-formatter.dialect": "sql",
+    "sql-formatter.uppercase": false,
+    "sql-formatter.linesBetweenQueries": 3,
+    "go.toolsManagement.autoUpdate": true,
+    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false,
+    "workbench.sideBar.location": "right",
+    "editor.inlineSuggest.enabled": true
+}
