@@ -1,4 +1,6 @@
 {
+    "sortEditors.sortEditorsAutomatically": true,
+    "sortEditors.sortEditorsOrder": "fullpath",
     "[yaml]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
@@ -22,8 +24,8 @@
     "go.docsTool": "gogetdoc",
     "[go]": {
         "editor.insertSpaces": true,
-        "editor.formatOnSave": true, // Ctrl+Shift+I
-        "editor.defaultFormatter": "golang.go-nightly",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "golang.go",
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
@@ -77,7 +79,7 @@
         "*.ipynb": "jupyter-notebook"
     },
     "editor.tabSize": 4,
-    "editor.fontSize": 13.5,
+    "editor.fontSize": 15,
     "editor.lineHeight": 1.2,
     "editor.fontFamily": "Source Code Pro", // https://fonts.google.com/specimen/Source%20Code%20Pro
     //"editor.fontFamily": "Fira Code", // https://fonts.google.com/specimen/Fira+Code
@@ -98,8 +100,8 @@
     "editor.hideCursorInOverviewRuler": true,
     "workbench.tree.indent": 22,
     "editor.insertSpaces": true,
+    "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontFamily": "monospace",
-    "terminal.integrated.fontSize": 13,
     "python.analysis.extraPaths": [
         "/usr/local/lib/python2.7/site-packages/",
         "/usr/local/lib/python3.6/site-packages/",
@@ -165,13 +167,18 @@
     "editor.formatOnSave": true,
     "editor.formatOnPaste": true,
     "editor.smoothScrolling": true,
+    "workbench.list.smoothScrolling": true,
     "window.smoothScrollingWorkaround": true,
     "sql-formatter.dialect": "sql",
     "sql-formatter.uppercase": false,
     "sql-formatter.linesBetweenQueries": 3,
     "go.toolsManagement.autoUpdate": true,
+    "window.zoomLevel": 1,
+    "editor.minimap.enabled": false,
     "workbench.sideBar.location": "right",
-    "window.zoomLevel": 1.1,
     "editor.inlineSuggest.enabled": true,
     "editor.multiCursorModifier": "alt",
+    "workbench.editor.wrapTabs": true,
+    "editor.cursorSmoothCaretAnimation": true,
+    "terminal.integrated.smoothScrolling": true,
 }
