@@ -1,6 +1,6 @@
 {
-    "sortEditors.sortEditorsAutomatically": true,
-    "sortEditors.sortEditorsOrder": "fullpath",
+    "smart-tabs.activeFirst": false,
+    "smart-tabs.fixedTabs": 5,
     "[yaml]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
@@ -17,7 +17,6 @@
             79
         ]
     },
-    "prettier.useTabs": true,
     "go.lintOnSave": "file",
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
@@ -178,7 +177,9 @@
     "workbench.sideBar.location": "right",
     "editor.inlineSuggest.enabled": true,
     "editor.multiCursorModifier": "alt",
-    "workbench.editor.wrapTabs": true,
+    "workbench.editor.wrapTabs": false,
     "editor.cursorSmoothCaretAnimation": true,
     "terminal.integrated.smoothScrolling": true,
+    "debug.onTaskErrors": "debugAnyway",
+    "workbench.editor.openPositioning": "last", // right
 }
