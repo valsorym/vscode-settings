@@ -1,6 +1,6 @@
 {
     "smart-tabs.activeFirst": false,
-    "smart-tabs.fixedTabs": 5,
+    "smart-tabs.fixedTabs": 4,
     "[yaml]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
@@ -176,7 +176,6 @@
     "editor.minimap.enabled": false,
     "workbench.sideBar.location": "right",
     "editor.inlineSuggest.enabled": true,
-    "editor.multiCursorModifier": "alt",
     "workbench.editor.wrapTabs": false,
     "editor.cursorSmoothCaretAnimation": true,
     "terminal.integrated.smoothScrolling": true,
