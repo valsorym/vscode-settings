@@ -1,5 +1,14 @@
 {
-    "smart-tabs.activeFirst": false,
+    "files.trimTrailingWhitespace": true,
+    "trailing-spaces.highlightCurrentLine": false,
+    "arduino.defaultBaudRate": 9600,
+    "C_Cpp.clang_format_fallbackStyle": "{ PointerAlignment: Left, BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0, IndentWidth: 4}",
+    "grammarly.files.include": [
+        "**/README.md",
+        "**/readme.md",
+        "**/*.txt",
+    ],
+    "smart-tabs.activeFirst": true,
     "smart-tabs.fixedTabs": 4,
     "[yaml]": {
         "editor.tabSize": 2,
@@ -9,6 +18,9 @@
             0
         ]
     },
+    "[ino]": {
+        "editor.tabSize": 14
+    },
     "[typescript]": {
         "editor.tabSize": 4
     },
@@ -17,17 +29,31 @@
             79
         ]
     },
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                // VSCode extension: emeraldwalk.runonsave
+                // go install github.com/segmentio/golines@latest
+                // GO111MODULE=on go install mvdan.cc/gofumpt@latest
+                "match": "\\.go$",
+                "cmd": "golines ${file} -w -m 79 --base-formatter=\"gofumpt\""
+            },
+        ]
+    },
     "go.lintOnSave": "file",
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "go.docsTool": "gogetdoc",
     "[go]": {
-        "editor.insertSpaces": true,
+        // "editor.defaultFormatter": "golang.go",
+        //"editor.insertSpaces": true,
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "golang.go",
         "editor.codeActionsOnSave": {
             "source.organizeImports": true
         }
+    },
+    "gopls": {
+        "formatting.gofumpt": true
     },
     "go.toolsEnvVars": {
         "GO11MODULE": "on"
@@ -53,13 +79,19 @@
     "[py]": {
         "editor.tabSize": 4
     },
+    "[js][html]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 8
+    },
     "[html]": {
+        "editor.tabSize": 2,
         "editor.rulers": [
             0
         ],
         "editor.defaultFormatter": "mohd-akram.vscode-html-format"
     },
     "[django-html]": {
+        "editor.tabSize": 2,
         "editor.rulers": [
             79
         ]
@@ -112,6 +144,7 @@
     "workbench.iconTheme": "atom-icons",
     "cSpell.userWords": [
         "goloop",
+        "microcontroller",
         "NOSQL",
         "Sotho",
         "Tracef",
@@ -129,7 +162,6 @@
     "editor.autoClosingBrackets": "never",
     "editor.autoClosingQuotes": "never",
     "editor.autoSurround": "never",
-    "workbench.editor.enablePreview": false,
     "security.workspace.trust.untrustedFiles": "open",
     "redhat.telemetry.enabled": true,
     "notebook.cellToolbarLocation": {
@@ -172,13 +204,15 @@
     "sql-formatter.uppercase": false,
     "sql-formatter.linesBetweenQueries": 3,
     "go.toolsManagement.autoUpdate": true,
-    "window.zoomLevel": 1,
     "editor.minimap.enabled": false,
     "workbench.sideBar.location": "right",
     "editor.inlineSuggest.enabled": true,
     "workbench.editor.wrapTabs": false,
-    "editor.cursorSmoothCaretAnimation": true,
+    "editor.cursorSmoothCaretAnimation": "on",
     "terminal.integrated.smoothScrolling": true,
     "debug.onTaskErrors": "debugAnyway",
-    "workbench.editor.openPositioning": "last", // right
+    "workbench.editor.openPositioning": "last",
+    "[python]": {
+        "editor.formatOnType": true
+    }, // right
 }
