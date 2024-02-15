@@ -1,15 +1,100 @@
 {
-    "files.trimTrailingWhitespace": true,
-    "trailing-spaces.highlightCurrentLine": false,
-    "arduino.defaultBaudRate": 9600,
-    "C_Cpp.clang_format_fallbackStyle": "{ PointerAlignment: Left, BasedOnStyle: Google, IndentWidth: 4, ColumnLimit: 0, IndentWidth: 4}",
-    "grammarly.files.include": [
-        "**/README.md",
-        "**/readme.md",
-        "**/*.txt",
+    // C/C++
+    //"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, ColumnLimit: 0, Standard: Cpp11, BreakBeforeBraces: Allman, IndentWidth: 4, IndentPPDirectives: AfterHash, AccessModifierOffset: -4, AlignAfterOpenBracket: Align, AlignConsecutiveDeclarations: false, AlignConsecutiveMacros: true, AlignEscapedNewlines: Left, AlignOperands: true, AlignTrailingComments: true, AllowAllArgumentsOnNextLine: false, AllowAllConstructorInitializersOnNextLine: false, AllowAllParametersOfDeclarationOnNextLine: true, AllowShortBlocksOnASingleLine: false, AllowShortCaseLabelsOnASingleLine: false, AllowShortFunctionsOnASingleLine: None, AllowShortIfStatementsOnASingleLine: true, AllowShortLoopsOnASingleLine: false, AlwaysBreakAfterDefinitionReturnType: None, AlwaysBreakAfterReturnType: None, AlwaysBreakBeforeMultilineStrings: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, BinPackParameters: false, BraceWrapping: { AfterEnum: true, AfterStruct: true, AfterClass: true, SplitEmptyFunction: true, AfterControlStatement: false, AfterNamespace: false, AfterFunction: true, AfterUnion: true, AfterExternBlock: false, BeforeCatch: false, BeforeElse: false, SplitEmptyRecord: true, SplitEmptyNamespace: true } }",
+    // "C_Cpp.dimInactiveRegions": true,
+    // "clang-format.executable": "${workspaceRoot}/.clang-format",
+    "[c]": {
+        "editor.rulers": [
+            80
+        ]
+    },
+    "[cpp]": {
+        "editor.rulers": [
+            80
+        ]
+    },
+    // Python
+    // ------------------------------------------------------------------------
+    // [-] pip install django black isort pylint pylint-django mypy django-stubs
+    // "black-formatter.args": [
+    //     "--line-length",
+    //     "79"
+    // ],
+    // "pylint.importStrategy": "fromEnvironment",
+    // "pylint.lintOnChange": false,
+    // "pylint.args": [
+    //     "--load-plugins",
+    //     "pylint_django",
+    //     "--max-line-length=79",
+    //     "--disable=C0114,C0209,C0411,C0415,C0302,W0105,W0511,W0613,W0718,W5103"
+    // ],
+    // "python.formatting.provider": "ruff",
+    // "[python]": {
+    //     "editor.defaultFormatter": "ms-python.black-formatter",
+    //     //"editor.defaultFormatter": "ms-python.autopep8",
+    //     "editor.formatOnSave": true,
+    //     "editor.codeActionsOnSave": {
+    //         "source.organizeImports": "explicit"
+    //     },
+    // },
+    // ------------------------------------------------------------------------
+    // pip install ruff isort mypy pylint pylint-django pylint-celery django-stubs
+    "pylint.importStrategy": "fromEnvironment",
+    "pylint.lintOnChange": false,
+    "pylint.args": [
+        "--load-plugins=pylint_django,pylint_celery",
+        "--django-settings-module=basic.settings",
+        "--max-line-length=79",
+        "--disable=C0103,C0114,C0115,C0209,C0411,C0415,C0302,W0105,W0511,W0613,W0718,W5103"
     ],
-    "smart-tabs.activeFirst": true,
-    "smart-tabs.fixedTabs": 4,
+    "python.analysis.extraPaths": [
+        "./",
+        "./src/",
+        "./src/apps/"
+    ],
+    "[python]": {
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit",
+            "source.organizeImports": "explicit"
+        }
+    },
+    "ruff.organizeImports": false,
+    "isort.args": [
+        "--profile",
+        "black"
+    ],
+    "mypy-type-checker.path": [
+        "${workspaceFolder}/.venv/bin/mypy"
+    ],
+    "mypy-type-checker.args": [
+        "--config-file=.mypy.ini"
+    ],
+    // DjLint
+    // Doc: https://www.djlint.com/docs/configuration/
+    // djLint plugin for VSCode, and pip install djlint
+    "djlint.ignore": [
+        "H021"
+    ],
+    "djlint.blankLineAfterTag": [
+        "load,extends,include"
+    ],
+    "djlint.blankLineBeforeTag": [
+        "load,extends,include"
+    ],
+    "djlint.formatAttributeTemplateTags": true,
+    "djlint.formatCss": true,
+    "djlint.formatJs": true,
+    "djlint.closeVoidTags": true,
+    "djlint.maxBlankLines": 4,
+    "djlint.maxLineLength": 120,
+    "djlint.profile": "django",
+    "djlint.indentJs": 2,
+    "djlint.indentCss": 2,
+    "djlint.lineBreakAfterMultilineTag": false,
+    "djlint.preserveBlankLines": true,
+    // YAML
     "[yaml]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
@@ -18,201 +103,219 @@
             0
         ]
     },
-    "[ino]": {
-        "editor.tabSize": 14
-    },
+    // TypeScript
     "[typescript]": {
-        "editor.tabSize": 4
-    },
-    "[javascript]": {
+        "editor.tabSize": 2,
         "editor.rulers": [
-            79
+            80
         ]
     },
-    "emeraldwalk.runonsave": {
-        "commands": [
-            {
-                // VSCode extension: emeraldwalk.runonsave
-                // go install github.com/segmentio/golines@latest
-                // GO111MODULE=on go install mvdan.cc/gofumpt@latest
-                "match": "\\.go$",
-                "cmd": "golines ${file} -w -m 79 --base-formatter=\"gofumpt\""
-            },
-        ]
+    // JavaScript
+    "[javascript]": {
+        "editor.tabSize": 2,
+        "editor.rulers": [
+            80
+        ],
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
+    // GoLang
     "go.lintOnSave": "file",
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
-    "go.docsTool": "gogetdoc",
     "[go]": {
-        // "editor.defaultFormatter": "golang.go",
-        //"editor.insertSpaces": true,
+        "editor.insertSpaces": true,
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
-            "source.organizeImports": true
-        }
-    },
-    "gopls": {
-        "formatting.gofumpt": true
+            "source.organizeImports": "explicit"
+        },
+        "editor.rulers": [
+            80,
+            81
+        ]
     },
     "go.toolsEnvVars": {
         "GO11MODULE": "on"
     },
-    "go.lintTool": "revive",
-    // "go.lintFlags": [
-    //     "--disable-all",
-    //     "--enable=golint",
-    //     "--exclude=exported (const|type|method|function) [\\w.]+ should have comment (\\(or a comment on this block\\) )?or be unexported",
-    //     "--exclude=don't use ALL_CAPS in Go names; use CamelCase",
-    //     "--exclude=(func|const|struct field|) \\w+ should be \\w+"
-    // ],
+    "go.lintTool": "golint",
     "[json]": {
         "editor.rulers": [
             0
         ]
     },
+    // Markdown
     "[markdown]": {
-        "editor.wordWrap": "wordWrapColumn",
-        "editor.wrappingIndent": "same",
-        "editor.wordWrapColumn": 79
-    },
-    "[py]": {
-        "editor.tabSize": 4
-    },
-    "[js][html]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 8
-    },
-    "[html]": {
-        "editor.tabSize": 2,
+        "editor.wordWrap": "bounded",
+        "editor.wordWrapColumn": 120,
         "editor.rulers": [
-            0
-        ],
-        "editor.defaultFormatter": "mohd-akram.vscode-html-format"
-    },
-    "[django-html]": {
-        "editor.tabSize": 2,
-        "editor.rulers": [
-            79
+            79,
+            120
         ]
     },
+    // HTML
+    "html.autoClosingTags": false,
+    "html.format.wrapAttributes": "preserve-aligned",
+    "html.format.enable": false,
+    "html.format.wrapLineLength": 100,
+    "[html]": {
+        "editor.rulers": [
+            80,
+            120,
+            121
+        ],
+        "editor.defaultFormatter": "monosans.djlint",
+        "editor.tabSize": 2
+    },
+    // Django-HTML
+    "[django-html]": {
+        // Stop prettier from formatting HTML.
+        "editor.defaultFormatter": "monosans.djlint",
+        "editor.detectIndentation": false,
+        "editor.rulers": [
+            80,
+            120,
+            121
+        ],
+        "editor.tabSize": 2
+    },
+    // SQL
     "[sql]": {
         "editor.rulers": [
             0
         ]
     },
+    // CSS/SCSS
     "[css]": {
         "editor.rulers": [
-            0
-        ]
+            80,
+            120
+        ],
+        "editor.tabSize": 2,
     },
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
+    "[scss]": {
+        "editor.rulers": [
+            80,
+            120
+        ],
+        "editor.tabSize": 2
     },
-    "editor.tabSize": 4,
-    "editor.fontSize": 15,
-    "editor.lineHeight": 1.2,
-    "editor.fontFamily": "Source Code Pro", // https://fonts.google.com/specimen/Source%20Code%20Pro
-    //"editor.fontFamily": "Fira Code", // https://fonts.google.com/specimen/Fira+Code
-    // "editor.fontFamily": "Montserrat Alternates", // https://fonts.google.com/specimen/Montserrat+Alternates
-    // "editor.fontFamily": "Anonymous Pro", // https://fonts.google.com/specimen/Anonymous+Pro
-    "workbench.startupEditor": "none",
-    "editor.rulers": [
-        79
-    ],
-    "workbench.colorCustomizations": {
-        "editorRuler.foreground": "#495364", //"#40c3ff",
-        "editor.lineHighlightBackground": "#32353dff",
-        "editor.lineHighlightBorder": "#00000000",
-        "editorHint.foreground": "#ff000000",
-        "editorHint.border": "#00ff66"
-        //"editorHint.border": "#535855",
-    },
-    "editor.hideCursorInOverviewRuler": true,
-    "workbench.tree.indent": 22,
-    "editor.insertSpaces": true,
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "monospace",
-    "python.analysis.extraPaths": [
-        "/usr/local/lib/python2.7/site-packages/",
-        "/usr/local/lib/python3.6/site-packages/",
-        "/usr/local/lib/python3.7/site-packages/",
-        "/usr/local/lib/python3.9/site-packages/",
-        "/usr/local/lib/python3.10/site-packages/"
-    ],
-    "workbench.colorTheme": "One Monokai",
-    "workbench.iconTheme": "atom-icons",
-    "cSpell.userWords": [
-        "goloop",
-        "microcontroller",
-        "NOSQL",
-        "Sotho",
-        "Tracef",
-        "Traceln",
-        "горутин",
-        "слайс",
-        "Слайси",
-        "слайсі",
-        "слайсу"
-    ],
+    // MictoPico
+    "micropico.autoConnect": false,
+    "micropico.manualComDevice": "/dev/ttyACM0",
+    // Smart-tab
+    "smart-tabs.activeFirst": true,
+    "smart-tabs.fixedTabs": 3,
+    "smart-tabs.debounceDelay": 300,
+    "smart-tabs.reactionEvent": "onedit",
+    // cSpell
     "cSpell.language": "en,uk",
     "cSpell.diagnosticLevel": "Hint",
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.suggestOnTriggerCharacters": false,
-    "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never",
-    "editor.autoSurround": "never",
+    "cSpell.userWords": [
+        "akram",
+        "autopep",
+        "autopk",
+        "EXXX",
+        "goimports",
+        "golint",
+        "ipynb",
+        "isort",
+        "itercompat",
+        "modeltranslation",
+        "mohd",
+        "Monokai",
+        "mypy",
+        "onedit",
+        "prec",
+        "pylint",
+        "subclasscheck",
+        "venv",
+        "WXXX"
+    ],
+    // Security
     "security.workspace.trust.untrustedFiles": "open",
-    "redhat.telemetry.enabled": true,
-    "notebook.cellToolbarLocation": {
-        "default": "right",
-        "jupyter-notebook": "left"
-    },
-    "diffEditor.wordWrap": "off",
-    "editor.hover.enabled": false,
-    "editor.quickSuggestionsDelay": 1000,
-    "editor.parameterHints.enabled": false,
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    // Editor
+    // "window.zoomLevel": 0.3,
+    "window.zoomLevel": 0.3,
     "files.restoreUndoStack": false,
     "files.exclude": {
         "**/.git": true,
-        "**/.vscode": true,
+        //"**/.vscode": true,
         "**/.svn": true,
         "**/.hg": true,
         "**/.DS_Store": true,
         "**/.archive.*": true,
         "**/.del.*": true
     },
-    "importSorter.importStringConfiguration.tabSize": 4,
-    "importSorter.generalConfiguration.sortOnBeforeSave": true,
-    "importSorter.importStringConfiguration.maximumNumberOfImportExpressionsPerLine.count": 79,
-    "importSorter.sortConfiguration.removeUnusedImports": true,
-    "importSorter.importStringConfiguration.numberOfEmptyLinesAfterAllImports": 2,
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "html.autoClosingTags": false,
-    "html.format.wrapAttributes": "preserve-aligned",
-    "html.format.enable": false,
-    "html.format.wrapLineLength": 100,
-    "editor.detectIndentation": false,
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "explicit"
+    },
+    "editor.tabSize": 4,
+    "editor.fontSize": 15,
+    "editor.lineHeight": 1.2,
+    "editor.rulers": [
+        0,
+        79
+    ],
     "editor.formatOnSave": true,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoSurround": "never",
+    "editor.detectIndentation": false,
     "editor.formatOnPaste": true,
     "editor.smoothScrolling": true,
-    "workbench.list.smoothScrolling": true,
-    "window.smoothScrollingWorkaround": true,
-    "sql-formatter.dialect": "sql",
-    "sql-formatter.uppercase": false,
-    "sql-formatter.linesBetweenQueries": 3,
-    "go.toolsManagement.autoUpdate": true,
-    "editor.minimap.enabled": false,
-    "workbench.sideBar.location": "right",
-    "editor.inlineSuggest.enabled": true,
-    "workbench.editor.wrapTabs": false,
+    "editor.cursorBlinking": "phase",
     "editor.cursorSmoothCaretAnimation": "on",
-    "terminal.integrated.smoothScrolling": true,
-    "debug.onTaskErrors": "debugAnyway",
+    "editor.minimap.enabled": false,
+    "editor.inlineSuggest.enabled": true,
+    "editor.guides.indentation": false,
+    "editor.tokenColorCustomizations": {
+        "[Default Dark+]": {
+            "textMateRules": [
+                {
+                    "scope": "markup.heading.python.cell.splitter",
+                    "settings": {
+                        "fontStyle": "bold",
+                        "foreground": "#40b903"
+                    }
+                }
+            ]
+        }
+    },
+    "editor.semanticHighlighting.enabled": true,
+    "editor.quickSuggestions": {
+        "comments": "off",
+        "other": "off",
+        "strings": "off"
+    },
+    "editor.quickSuggestionsDelay": 10000,
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.suggestSelection": "first",
+    "editor.hover.enabled": false,
+    "editor.insertSpaces": true,
+    "editor.hideCursorInOverviewRuler": true,
+    // Terminal
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "monospace",
+    // Workbench
+    "workbench.startupEditor": "none",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#313742", // "#495364", //"#40c3ff",
+        "editor.lineHighlightBackground": "#32353dff",
+        "editor.lineHighlightBorder": "#00000000",
+        "editorHint.foreground": "#ff000000",
+        "editorHint.border": "#00ff66"
+    },
+    "workbench.tree.indent": 22,
+    "workbench.editor.enablePreview": false,
+    "workbench.list.smoothScrolling": true,
+    "workbench.editor.wrapTabs": false,
+    "workbench.sideBar.location": "right",
     "workbench.editor.openPositioning": "last",
-    "[python]": {
-        "editor.formatOnType": true
-    }, // right
+    "workbench.iconTheme": "atom-icons",
+    "workbench.colorTheme": "One Monokai",
+    "git.openRepositoryInParentFolders": "never",
+    "remote.autoForwardPortsSource": "hybrid",
 }
