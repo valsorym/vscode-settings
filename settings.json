@@ -104,13 +104,17 @@
         ]
     },
     // TypeScript
+    "typescript.preferences.importModuleSpecifierEnding": "js",
     "[typescript]": {
         "editor.tabSize": 2,
+        "editor.formatOnSave": true,
         "editor.rulers": [
             80
-        ]
+        ],
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     // JavaScript
+    "javascript.preferences.importModuleSpecifierEnding": "js",
     "[javascript]": {
         "editor.tabSize": 2,
         "editor.rulers": [
@@ -145,25 +149,35 @@
     // Markdown
     "[markdown]": {
         "editor.wordWrap": "bounded",
-        "editor.wordWrapColumn": 120,
+        "editor.wordWrapColumn": 100,
         "editor.rulers": [
-            79,
-            120
+            100,
+            101
         ]
     },
     // HTML
     "html.autoClosingTags": false,
-    "html.format.wrapAttributes": "preserve-aligned",
-    "html.format.enable": false,
-    "html.format.wrapLineLength": 100,
+    // "html.format.wrapAttributes": "preserve",
+    "html.format.wrapAttributes": "force",
+    "html.format.enable": true,
+    "html.format.wrapLineLength": 80,
     "[html]": {
         "editor.rulers": [
             80,
             120,
             121
         ],
+        // "editor.defaultFormatter": "vscode.html-language-features",
         "editor.defaultFormatter": "monosans.djlint",
         "editor.tabSize": 2
+    },
+    // Jinja
+    "[jinja]": {
+        "editor.rulers": [
+            121
+        ],
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "vscode.html-language-features"
     },
     // Django-HTML
     "[django-html]": {
@@ -234,7 +248,8 @@
     "security.workspace.trust.untrustedFiles": "open",
     // Editor
     // "window.zoomLevel": 0.3,
-    "window.zoomLevel": 0.3,
+    "window.zoomLevel": 0.7,
+    // "explorer.sortOrder": "type",
     "files.restoreUndoStack": false,
     "files.exclude": {
         "**/.git": true,
@@ -249,7 +264,7 @@
         "source.organizeImports": "explicit"
     },
     "editor.tabSize": 4,
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "editor.lineHeight": 1.2,
     "editor.rulers": [
         0,
@@ -314,8 +329,13 @@
     "workbench.editor.wrapTabs": false,
     "workbench.sideBar.location": "right",
     "workbench.editor.openPositioning": "last",
-    "workbench.iconTheme": "atom-icons",
     "workbench.colorTheme": "One Monokai",
+    "files.trimTrailingWhitespace": true,
     "git.openRepositoryInParentFolders": "never",
     "remote.autoForwardPortsSource": "hybrid",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "workbench.iconTheme": "atom-icons",
+    "editor.stickyScroll.enabled": false,
+    "workbench.tree.enableStickyScroll": false
 }
