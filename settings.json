@@ -15,7 +15,7 @@
     },
     // Python
     // ------------------------------------------------------------------------
-    // [-] pip install django black isort pylint pylint-django mypy django-stubs
+    // [-] pip install black isort pylint pylint-django mypy django-stubs
     // "black-formatter.args": [
     //     "--line-length",
     //     "79"
@@ -61,6 +61,11 @@
         }
     },
     "ruff.organizeImports": false,
+    "ruff.format.args": [
+        "--config",
+        "line-length=79",
+        "format.quote-style='preserve'"
+    ],
     "isort.args": [
         "--profile",
         "black"
