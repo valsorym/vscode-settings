@@ -1,74 +1,159 @@
 {
+    // Optimized configuration for performance.
+    "files.autoSave": "off",
+    "files.autoSaveDelay": 1000,
+    "files.restoreUndoStack": false,
+    "files.trimTrailingWhitespace": true,
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/env/**": true,
+        "**/venv/**": true,
+        "**/.venv/**": true,
+        "**/__pycache__/**": true,
+        "**/.pytest_cache/**": true
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/.DS_Store": true,
+        "**/.archive.*": true,
+        "**/.del.*": true,
+        "**/__pycache__": true,
+        "**/.pytest_cache": true
+    },
+
+    // Editor - general settings.
+    "editor.tabSize": 4,
+    "editor.fontSize": 15,
+    "editor.lineHeight": 1.12,
+    "editor.rulers": [0, 79],
+    "editor.formatOnSave": false,
+    "editor.formatOnSaveMode": "file",
+    "editor.formatOnType": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.autoClosingBrackets": "never",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoSurround": "never",
+    "editor.detectIndentation": false,
+    "editor.formatOnPaste": false,
+
+    "window.zoomLevel": 0.4,
+    "editor.codeActionsOnSave": {},
+    "telemetry.telemetryLevel": "off",
+    "extensions.autoUpdate": false,
+    "extensions.ignoreRecommendations": true,
+    "update.mode": "manual",
+    "search.followSymlinks": false,
+    "search.searchOnType": false,
+    "remote.autoForwardPortsSource": "hybrid",
+    "makefile.configureOnOpen": false,
+    "editor.accessibilitySupport": "off",
+    "github.copilot.enable": {
+        "*": true
+    },
+
+    "editor.formatOnSaveTimeout": 1000,
+    "audioCues.enabled": "off",
+    "update.enableWindowsBackgroundUpdates": false,
+
+    // Visual effects optimization.
+    "editor.smoothScrolling": false,
+    "editor.cursorBlinking": "solid",
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.minimap.enabled": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.largeFileOptimizations": true,
+
+    // Tooltip optimization.
+    "editor.inlineSuggest.enabled": false,
+    "editor.guides.indentation": false,
+    "editor.semanticHighlighting.enabled": false,
+    "editor.quickSuggestions": {
+        "comments": false,
+        "other": true,
+        "strings": false
+    },
+    "editor.quickSuggestionsDelay": 100,
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.suggestSelection": "first",
+    "editor.hover.enabled": true,
+    "editor.hover.delay": 500,
+    "editor.insertSpaces": true,
+
+    // Workbench optimization.
+    "workbench.startupEditor": "none",
+    "workbench.colorCustomizations": {
+        "editorRuler.foreground": "#313742",
+        "editor.lineHighlightBackground": "#32353dff",
+        "editor.lineHighlightBorder": "#00000000",
+        "editorHint.foreground": "#ff000000",
+        "editorHint.border": "#00ff66"
+    },
+    "workbench.tree.enableStickyScroll": false,
+    "workbench.tree.indent": 16,
+    "workbench.editor.enablePreview": false,
+    "workbench.list.smoothScrolling": false,
+    "workbench.editor.wrapTabs": false,
+    "workbench.sideBar.location": "right",
+    "workbench.editor.openPositioning": "last",
+    "workbench.colorTheme": "One Monokai",
+    "workbench.iconTheme": "atom-icons",
+    "workbench.editor.limit.enabled": true,
+    "workbench.editor.limit.value": 10,
+    "workbench.editor.closeOnFileDelete": true,
+
+    // Explorer.
+    "explorer.autoReveal": false,
+    "explorer.compactFolders": false,
+
+    // Terminal.
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.fontFamily": "monospace",
+
+    // Git.
+    "git.enabled": true,
+    "git.autofetch": false,
+    "git.autorefresh": false,
+    "git.openRepositoryInParentFolders": "never",
+    "git.autoRepositoryDetection": "openEditors",
+
     // C/C++
-    //"C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, ColumnLimit: 0, Standard: Cpp11, BreakBeforeBraces: Allman, IndentWidth: 4, IndentPPDirectives: AfterHash, AccessModifierOffset: -4, AlignAfterOpenBracket: Align, AlignConsecutiveDeclarations: false, AlignConsecutiveMacros: true, AlignEscapedNewlines: Left, AlignOperands: true, AlignTrailingComments: true, AllowAllArgumentsOnNextLine: false, AllowAllConstructorInitializersOnNextLine: false, AllowAllParametersOfDeclarationOnNextLine: true, AllowShortBlocksOnASingleLine: false, AllowShortCaseLabelsOnASingleLine: false, AllowShortFunctionsOnASingleLine: None, AllowShortIfStatementsOnASingleLine: true, AllowShortLoopsOnASingleLine: false, AlwaysBreakAfterDefinitionReturnType: None, AlwaysBreakAfterReturnType: None, AlwaysBreakBeforeMultilineStrings: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, BinPackParameters: false, BraceWrapping: { AfterEnum: true, AfterStruct: true, AfterClass: true, SplitEmptyFunction: true, AfterControlStatement: false, AfterNamespace: false, AfterFunction: true, AfterUnion: true, AfterExternBlock: false, BeforeCatch: false, BeforeElse: false, SplitEmptyRecord: true, SplitEmptyNamespace: true } }",
-    // "C_Cpp.dimInactiveRegions": true,
-    // "clang-format.executable": "${workspaceRoot}/.clang-format",
+    "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, ColumnLimit: 0, Standard: Cpp11, BreakBeforeBraces: Attach, IndentWidth: 4, IndentPPDirectives: AfterHash, AccessModifierOffset: -4, AlignAfterOpenBracket: Align, AlignConsecutiveDeclarations: false, AlignConsecutiveMacros: true, AlignEscapedNewlines: Left, AlignOperands: true, AlignTrailingComments: true, AllowAllArgumentsOnNextLine: false, AllowAllConstructorInitializersOnNextLine: false, AllowAllParametersOfDeclarationOnNextLine: true, AllowShortBlocksOnASingleLine: false, AllowShortCaseLabelsOnASingleLine: false, AllowShortFunctionsOnASingleLine: None, AllowShortIfStatementsOnASingleLine: true, AllowShortLoopsOnASingleLine: false, AlwaysBreakAfterDefinitionReturnType: None, AlwaysBreakAfterReturnType: None, AlwaysBreakBeforeMultilineStrings: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, BinPackParameters: false, BraceWrapping: { AfterFunction: false, AfterControlStatement: false, AfterEnum: true, AfterStruct: true, AfterClass: true, SplitEmptyFunction: true, AfterNamespace: false, AfterUnion: true, AfterExternBlock: false, BeforeCatch: false, BeforeElse: false, SplitEmptyRecord: true, SplitEmptyNamespace: true } }",
     "[c]": {
-        "editor.rulers": [
-            80
-        ]
+        "editor.rulers": [80]
     },
     "[cpp]": {
-        "editor.rulers": [
-            80
-        ]
+        "editor.rulers": [80],
+        "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    // Python
-    // ------------------------------------------------------------------------
-    // [-] pip install black isort pylint pylint-django mypy django-stubs
-    // "black-formatter.args": [
-    //     "--line-length",
-    //     "79"
-    // ],
-    // "pylint.importStrategy": "fromEnvironment",
-    // "pylint.lintOnChange": false,
-    // "pylint.args": [
-    //     "--load-plugins",
-    //     "pylint_django",
-    //     "--max-line-length=79",
-    //     "--disable=C0114,C0209,C0411,C0415,C0302,W0105,W0511,W0613,W0718,W5103"
-    // ],
-    // "python.formatting.provider": "ruff",
-    // "[python]": {
-    //     "editor.defaultFormatter": "ms-python.black-formatter",
-    //     //"editor.defaultFormatter": "ms-python.autopep8",
-    //     "editor.formatOnSave": true,
-    //     "editor.codeActionsOnSave": {
-    //         "source.organizeImports": "explicit"
-    //     },
-    // },
-    // ------------------------------------------------------------------------
-    // pip install ruff isort mypy pylint pylint-django pylint-celery django-stubs
-    "pylint.importStrategy": "fromEnvironment",
-    "pylint.lintOnChange": false,
-    "pylint.args": [
-        "--load-plugins=pylint_django,pylint_celery",
-        "--django-settings-module=basic.settings",
-        "--max-line-length=79",
-        "--disable=C0103,C0114,C0115,C0209,C0411,C0415,C0302,W0105,W0511,W0613,W0718,W5103"
-    ],
+
+    // Python.
     "python.analysis.extraPaths": [
         "./",
         "./src/",
         "./src/apps/"
     ],
+    "python.linting.enabled": false,
+    "python.linting.lintOnSave": false,
+    "python.analysis.indexing": false,
+    "python.analysis.autoImportCompletions": false,
+
     "[python]": {
         "editor.defaultFormatter": "charliermarsh.ruff",
         "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.fixAll": "explicit",
-            "source.organizeImports": "explicit"
-        }
+        "editor.codeActionsOnSave": {}
     },
+
+    // Linters.
     "ruff.organizeImports": false,
-    "ruff.format.args": [
-        "--config",
-        "line-length=79",
-        "format.quote-style='preserve'"
-    ],
+    "ruff.configuration": "file",
+    "ruff.fallbackConfiguration": "{ ling-length: 79, target-version: 'py38', show-source: true, isort.lines-after-imports: 2, flake8-quotes.inline-quotes: 'single' }",
     "isort.args": [
         "--profile",
-        "black"
+        "ruff"
     ],
     "mypy-type-checker.path": [
         "${workspaceFolder}/.venv/bin/mypy"
@@ -76,59 +161,47 @@
     "mypy-type-checker.args": [
         "--config-file=.mypy.ini"
     ],
-    // DjLint
-    // Doc: https://www.djlint.com/docs/configuration/
-    // djLint plugin for VSCode, and pip install djlint
-    "djlint.ignore": [
-        "H021"
+
+    // Arduino.
+    "arduino.useArduinoCli": true,
+    "arduino.additionalUrls": [
+        "/Users/vals/Documents/Arduino/libraries/"
     ],
-    "djlint.blankLineAfterTag": [
-        "load,extends,include"
-    ],
-    "djlint.blankLineBeforeTag": [
-        "load,extends,include"
-    ],
-    "djlint.formatAttributeTemplateTags": true,
-    "djlint.formatCss": true,
-    "djlint.formatJs": true,
-    "djlint.closeVoidTags": true,
-    "djlint.maxBlankLines": 4,
-    "djlint.maxLineLength": 120,
+
+    // DjLint.
+    "djlint.ignore": ["H021"],
     "djlint.profile": "django",
-    "djlint.indentJs": 2,
-    "djlint.indentCss": 2,
-    "djlint.lineBreakAfterMultilineTag": false,
-    "djlint.preserveBlankLines": true,
-    // YAML
+    "djlint.maxLineLength": 120,
+
+    // YAML.
     "[yaml]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
         "editor.detectIndentation": false,
-        "editor.rulers": [
-            0
-        ]
+        "editor.rulers": [0]
     },
-    // TypeScript
+
+    // TypeScript.
     "typescript.preferences.importModuleSpecifierEnding": "js",
     "[typescript]": {
         "editor.tabSize": 2,
         "editor.formatOnSave": true,
-        "editor.rulers": [
-            80
-        ],
+        "editor.rulers": [80],
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    // JavaScript
+
+    // JavaScript.
     "javascript.preferences.importModuleSpecifierEnding": "js",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "typescript.updateImportsOnFileMove.enabled": "always",
     "[javascript]": {
-        "editor.tabSize": 2,
-        "editor.rulers": [
-            80
-        ],
+        "editor.tabSize": 4,
+        "editor.rulers": [80],
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    // GoLang
-    "go.lintOnSave": "file",
+
+    // GoLang.
+    "go.lintOnSave": "off",
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
     "[go]": {
@@ -137,210 +210,86 @@
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         },
-        "editor.rulers": [
-            80,
-            81
-        ]
+        "editor.rulers": [80, 81]
     },
     "go.toolsEnvVars": {
         "GO11MODULE": "on"
     },
     "go.lintTool": "golint",
+
+    // JSON.
     "[json]": {
-        "editor.rulers": [
-            0
-        ]
+        "editor.rulers": [0]
     },
-    // Markdown
+
+    // Markdown.
     "[markdown]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 100,
-        "editor.rulers": [
-            100,
-            101
-        ]
+        "editor.rulers": [100, 101]
     },
-    // HTML
+
+    // HTML.
     "html.autoClosingTags": false,
-    // "html.format.wrapAttributes": "preserve",
-    "html.format.wrapAttributes": "force",
-    "html.format.enable": true,
-    "html.format.wrapLineLength": 80,
+    "html.format.wrapLineLength": 150,
     "[html]": {
-        "editor.rulers": [
-            80,
-            120,
-            121
-        ],
-        // "editor.defaultFormatter": "vscode.html-language-features",
-        "editor.defaultFormatter": "monosans.djlint",
-        "editor.tabSize": 2
+        "editor.rulers": [100, 150],
+        "editor.defaultFormatter": "vscode.html-language-features",
+        "editor.tabSize": 4
     },
-    // Jinja
+
+    // Jinja.
     "[jinja]": {
-        "editor.rulers": [
-            121
-        ],
-        "editor.tabSize": 2,
+        "editor.rulers": [80, 120, 121],
+        "editor.tabSize": 4,
         "editor.defaultFormatter": "vscode.html-language-features"
     },
-    // Django-HTML
+
+    // Django-HTML.
     "[django-html]": {
-        // Stop prettier from formatting HTML.
-        "editor.defaultFormatter": "monosans.djlint",
         "editor.detectIndentation": false,
-        "editor.rulers": [
-            80,
-            120,
-            121
-        ],
-        "editor.tabSize": 2
+        "editor.rulers": [80, 120, 121],
+        "editor.tabSize": 4
     },
-    // SQL
+
+    // SQL.
     "[sql]": {
-        "editor.rulers": [
-            0
-        ]
+        "editor.rulers": [0]
     },
-    // CSS/SCSS
+
+    // CSS/SCSS.
     "[css]": {
-        "editor.rulers": [
-            80,
-            120
-        ],
-        "editor.tabSize": 2,
+        "editor.rulers": [80, 120],
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "vscode.css-language-features"
     },
     "[scss]": {
-        "editor.rulers": [
-            80,
-            120
-        ],
-        "editor.tabSize": 2
+        "editor.rulers": [80, 120],
+        "editor.tabSize": 4
     },
-    // MictoPico
+
+    // MictoPico.
     "micropico.autoConnect": false,
     "micropico.manualComDevice": "/dev/ttyACM0",
-    // Smart-tab
+
+    // Smart-tab.
     "smart-tabs.activeFirst": true,
     "smart-tabs.fixedTabs": 3,
     "smart-tabs.debounceDelay": 300,
     "smart-tabs.reactionEvent": "onedit",
-    // cSpell
+
+    // cSpell.
     "cSpell.language": "en,uk",
     "cSpell.diagnosticLevel": "Hint",
     "cSpell.userWords": [
-        "akram",
-        "autopep",
-        "autopk",
-        "EXXX",
-        "goimports",
-        "golint",
-        "ipynb",
-        "isort",
-        "itercompat",
-        "modeltranslation",
-        "mohd",
-        "Monokai",
-        "mypy",
-        "onedit",
-        "prec",
-        "pylint",
-        "subclasscheck",
-        "venv",
-        "WXXX"
+        "Adafruit", "akram", "apikey", "autopep", "autopk", "countup", "endfor",
+        "EXXX", "goimports", "golint", "goloop", "iban", "IMEI", "IMSI", "ipynb",
+        "isort", "itercompat", "jsoniter", "modeltranslation", "mohd", "Monokai",
+        "MSIN", "mypy", "onedit", "prec", "pylint", "rgex", "SHID", "sorl",
+        "subclasscheck", "Swal", "venv", "WXXX"
     ],
-    // Security
-    "security.workspace.trust.untrustedFiles": "open",
-    // Editor
-    // "window.zoomLevel": 0.3,
-    "window.zoomLevel": 0.7,
-    // "explorer.sortOrder": "type",
-    "files.restoreUndoStack": false,
-    "files.exclude": {
-        "**/.git": true,
-        //"**/.vscode": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/.DS_Store": true,
-        "**/.archive.*": true,
-        "**/.del.*": true
-    },
-    "editor.codeActionsOnSave": {
-        "source.organizeImports": "explicit"
-    },
-    "editor.tabSize": 4,
-    "editor.fontSize": 14,
-    "editor.lineHeight": 1.2,
-    "editor.rulers": [
-        0,
-        79
-    ],
-    "editor.formatOnSave": true,
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "editor.autoClosingBrackets": "never",
-    "editor.autoClosingQuotes": "never",
-    "editor.autoSurround": "never",
-    "editor.detectIndentation": false,
-    "editor.formatOnPaste": true,
-    "editor.smoothScrolling": true,
-    "editor.cursorBlinking": "phase",
-    "editor.cursorSmoothCaretAnimation": "on",
-    "editor.minimap.enabled": false,
-    "editor.inlineSuggest.enabled": true,
-    "editor.guides.indentation": false,
-    "editor.tokenColorCustomizations": {
-        "[Default Dark+]": {
-            "textMateRules": [
-                {
-                    "scope": "markup.heading.python.cell.splitter",
-                    "settings": {
-                        "fontStyle": "bold",
-                        "foreground": "#40b903"
-                    }
-                }
-            ]
-        }
-    },
-    "editor.semanticHighlighting.enabled": true,
-    "editor.quickSuggestions": {
-        "comments": "off",
-        "other": "off",
-        "strings": "off"
-    },
-    "editor.quickSuggestionsDelay": 10000,
-    "editor.suggestOnTriggerCharacters": false,
-    "editor.suggestSelection": "first",
-    "editor.hover.enabled": false,
-    "editor.insertSpaces": true,
-    "editor.hideCursorInOverviewRuler": true,
-    // Terminal
-    "terminal.integrated.fontSize": 14,
-    "terminal.integrated.fontFamily": "monospace",
-    // Workbench
-    "workbench.startupEditor": "none",
-    "workbench.editorAssociations": {
-        "*.ipynb": "jupyter-notebook"
-    },
-    "workbench.colorCustomizations": {
-        "editorRuler.foreground": "#313742", // "#495364", //"#40c3ff",
-        "editor.lineHighlightBackground": "#32353dff",
-        "editor.lineHighlightBorder": "#00000000",
-        "editorHint.foreground": "#ff000000",
-        "editorHint.border": "#00ff66"
-    },
-    "workbench.tree.indent": 22,
-    "workbench.editor.enablePreview": false,
-    "workbench.list.smoothScrolling": true,
-    "workbench.editor.wrapTabs": false,
-    "workbench.sideBar.location": "right",
-    "workbench.editor.openPositioning": "last",
-    "workbench.colorTheme": "One Monokai",
-    "files.trimTrailingWhitespace": true,
-    "git.openRepositoryInParentFolders": "never",
-    "remote.autoForwardPortsSource": "hybrid",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "workbench.iconTheme": "atom-icons",
-    "editor.stickyScroll.enabled": false,
-    "workbench.tree.enableStickyScroll": false
+
+    // Security.
+    "security.workspace.trust.untrustedFiles": "open"
+
 }
