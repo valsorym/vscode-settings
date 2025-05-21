@@ -5,7 +5,8 @@
     "files.autoSaveDelay": 1000,
     "files.restoreUndoStack": false,
     "files.trimTrailingWhitespace": true,
-// Exclude files from watcher for performance.
+
+    // Exclude files from watcher for performance.
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
@@ -17,7 +18,8 @@
         "**/.pytest_cache/**": true,
         "**/migrations/**": true
     },
-// Hide files in file explorer.
+
+    // Hide files in file explorer.
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -62,8 +64,9 @@
     "editor.largeFileOptimizations": true,
     "editor.guides.indentation": false,
     "editor.semanticHighlighting.enabled": false,
-// Suggestion and autocomplete settings.
-"editor.inlineSuggest.enabled": true,
+
+    // Suggestion and autocomplete settings.
+    "editor.inlineSuggest.enabled": true,
     "editor.quickSuggestions": {
         "comments": false,
         "other": true,
@@ -112,6 +115,7 @@
     // Zoom level and telemetry.
     "window.zoomLevel": 0.4,
     "telemetry.telemetryLevel": "off",
+
     // Update and search settings.
     "extensions.autoUpdate": false,
     "extensions.ignoreRecommendations": true,
@@ -128,6 +132,7 @@
         "markdown": false,
         "scminput": false
     },
+
     // TERMINAL SETTINGS //////////////////////////////////////////////////////
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontFamily": "monospace",
@@ -155,6 +160,8 @@
     },
 
     // Python /////////////////////////////////////////////////////////////////
+    // [!] Install dependencies in the virtual environment:
+    // pip install ruff isort mypy pylint pylint-django pylint-celery django-stubs
     // Analysis exclusions.
     "python.analysis.exclude": [
         "**/migrations",
@@ -167,6 +174,7 @@
         "venv/**",
         "env/**"
     ],
+
     // Code diagnostics and analysis.
     "python.analysis.diagnosticSeverityOverrides": {
         "reportAttributeAccessIssue": "none",
@@ -183,6 +191,7 @@
     "python.analysis.autoImportCompletions": true,
     "python.analysis.inlayHints.functionReturnTypes": true,
     "python.analysis.inlayHints.variableTypes": true,
+
     // Pylance settings.
     "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.extraPaths": [
@@ -222,6 +231,7 @@
         "--line-length",
         "88"
     ],
+
     // Arduino ////////////////////////////////////////////////////////////////
     "arduino.useArduinoCli": true,
     "arduino.additionalUrls": [
