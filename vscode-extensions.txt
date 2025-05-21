@@ -28,6 +28,7 @@ modular-mojotools.vscode-mojo
 monosans.djlint
 moozzyk.arduino
 ms-azuretools.vscode-docker
+ms-python.black-formatter
 ms-python.debugpy
 ms-python.python
 ms-python.vscode-pylance

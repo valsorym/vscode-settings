@@ -1,9 +1,11 @@
 {
-    // Optimized configuration for performance.
+    // FILE OPTIMIZATION //////////////////////////////////////////////////////
+    // File handling and autosave settings.
     "files.autoSave": "off",
     "files.autoSaveDelay": 1000,
     "files.restoreUndoStack": false,
     "files.trimTrailingWhitespace": true,
+// Exclude files from watcher for performance.
     "files.watcherExclude": {
         "**/.git/objects/**": true,
         "**/.git/subtree-cache/**": true,
@@ -12,8 +14,10 @@
         "**/venv/**": true,
         "**/.venv/**": true,
         "**/__pycache__/**": true,
-        "**/.pytest_cache/**": true
+        "**/.pytest_cache/**": true,
+        "**/migrations/**": true
     },
+// Hide files in file explorer.
     "files.exclude": {
         "**/.git": true,
         "**/.svn": true,
@@ -22,16 +26,21 @@
         "**/.archive.*": true,
         "**/.del.*": true,
         "**/__pycache__": true,
-        "**/.pytest_cache": true
+        "**/.pytest_cache": true,
+        "**/migrations": false // false - show, true - hide
     },
 
-    // Editor - general settings.
+    // EDITOR SETTINGS ////////////////////////////////////////////////////////
+    // Basic editor parameters.
     "editor.tabSize": 4,
     "editor.fontSize": 15,
     "editor.lineHeight": 1.12,
-    "editor.rulers": [0, 79],
-    "editor.formatOnSave": false,
-    "editor.formatOnSaveMode": "file",
+    "editor.rulers": [
+        0,
+        79
+    ],
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "modifications",
     "editor.formatOnType": false,
     "editor.acceptSuggestionOnCommitCharacter": false,
     "editor.autoClosingBrackets": "never",
@@ -39,38 +48,22 @@
     "editor.autoSurround": "never",
     "editor.detectIndentation": false,
     "editor.formatOnPaste": false,
-
-    "window.zoomLevel": 0.4,
     "editor.codeActionsOnSave": {},
-    "telemetry.telemetryLevel": "off",
-    "extensions.autoUpdate": false,
-    "extensions.ignoreRecommendations": true,
-    "update.mode": "manual",
-    "search.followSymlinks": false,
-    "search.searchOnType": false,
-    "remote.autoForwardPortsSource": "hybrid",
-    "makefile.configureOnOpen": false,
-    "editor.accessibilitySupport": "off",
-    "github.copilot.enable": {
-        "*": true
-    },
-
     "editor.formatOnSaveTimeout": 1000,
-    "audioCues.enabled": "off",
-    "update.enableWindowsBackgroundUpdates": false,
+    "editor.accessibilitySupport": "off",
+    "editor.insertSpaces": true,
 
-    // Visual effects optimization.
+    // Visual effect optimizations.
     "editor.smoothScrolling": false,
     "editor.cursorBlinking": "solid",
     "editor.cursorSmoothCaretAnimation": "off",
     "editor.minimap.enabled": false,
     "editor.hideCursorInOverviewRuler": true,
     "editor.largeFileOptimizations": true,
-
-    // Tooltip optimization.
-    "editor.inlineSuggest.enabled": false,
     "editor.guides.indentation": false,
     "editor.semanticHighlighting.enabled": false,
+// Suggestion and autocomplete settings.
+"editor.inlineSuggest.enabled": true,
     "editor.quickSuggestions": {
         "comments": false,
         "other": true,
@@ -81,9 +74,9 @@
     "editor.suggestSelection": "first",
     "editor.hover.enabled": true,
     "editor.hover.delay": 500,
-    "editor.insertSpaces": true,
 
-    // Workbench optimization.
+    // WORKSPACE SETTINGS /////////////////////////////////////////////////////
+    // General interface settings.
     "workbench.startupEditor": "none",
     "workbench.colorCustomizations": {
         "editorRuler.foreground": "#313742",
@@ -92,8 +85,9 @@
         "editorHint.foreground": "#ff000000",
         "editorHint.border": "#00ff66"
     },
-    "workbench.tree.enableStickyScroll": false,
+    "workbench.tree.enableStickyScroll": true,
     "workbench.tree.indent": 16,
+    "workbench.tree.renderIndentGuides": "always",
     "workbench.editor.enablePreview": false,
     "workbench.list.smoothScrolling": false,
     "workbench.editor.wrapTabs": false,
@@ -105,55 +99,108 @@
     "workbench.editor.limit.value": 10,
     "workbench.editor.closeOnFileDelete": true,
 
-    // Explorer.
-    "explorer.autoReveal": false,
+    // File explorer settings.
     "explorer.compactFolders": false,
+    "explorer.autoReveal": true,
+    "explorer.confirmDelete": true,
+    "explorer.confirmDragAndDrop": true,
+    "explorer.sortOrder": "mixed",
+    "explorer.decorations.badges": true,
+    "explorer.decorations.colors": true,
 
-    // Terminal.
+    // SYSTEM SETTINGS ////////////////////////////////////////////////////////
+    // Zoom level and telemetry.
+    "window.zoomLevel": 0.4,
+    "telemetry.telemetryLevel": "off",
+    // Update and search settings.
+    "extensions.autoUpdate": false,
+    "extensions.ignoreRecommendations": true,
+    "update.mode": "manual",
+    "update.enableWindowsBackgroundUpdates": false,
+    "search.followSymlinks": false,
+    "search.searchOnType": false,
+    "remote.autoForwardPortsSource": "hybrid",
+    "makefile.configureOnOpen": false,
+    "audioCues.enabled": "off",
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    },
+    // TERMINAL SETTINGS //////////////////////////////////////////////////////
     "terminal.integrated.fontSize": 14,
     "terminal.integrated.fontFamily": "monospace",
 
-    // Git.
+    // GIT SETTINGS ///////////////////////////////////////////////////////////
     "git.enabled": true,
     "git.autofetch": false,
     "git.autorefresh": false,
     "git.openRepositoryInParentFolders": "never",
     "git.autoRepositoryDetection": "openEditors",
 
-    // C/C++
+    // PROGRAMMING LANGUAGES //////////////////////////////////////////////////
+    // C/C++ //////////////////////////////////////////////////////////////////
     "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, ColumnLimit: 0, Standard: Cpp11, BreakBeforeBraces: Attach, IndentWidth: 4, IndentPPDirectives: AfterHash, AccessModifierOffset: -4, AlignAfterOpenBracket: Align, AlignConsecutiveDeclarations: false, AlignConsecutiveMacros: true, AlignEscapedNewlines: Left, AlignOperands: true, AlignTrailingComments: true, AllowAllArgumentsOnNextLine: false, AllowAllConstructorInitializersOnNextLine: false, AllowAllParametersOfDeclarationOnNextLine: true, AllowShortBlocksOnASingleLine: false, AllowShortCaseLabelsOnASingleLine: false, AllowShortFunctionsOnASingleLine: None, AllowShortIfStatementsOnASingleLine: true, AllowShortLoopsOnASingleLine: false, AlwaysBreakAfterDefinitionReturnType: None, AlwaysBreakAfterReturnType: None, AlwaysBreakBeforeMultilineStrings: false, AlwaysBreakTemplateDeclarations: true, BinPackArguments: false, BinPackParameters: false, BraceWrapping: { AfterFunction: false, AfterControlStatement: false, AfterEnum: true, AfterStruct: true, AfterClass: true, SplitEmptyFunction: true, AfterNamespace: false, AfterUnion: true, AfterExternBlock: false, BeforeCatch: false, BeforeElse: false, SplitEmptyRecord: true, SplitEmptyNamespace: true } }",
     "[c]": {
-        "editor.rulers": [80]
+        "editor.rulers": [
+            80
+        ]
     },
     "[cpp]": {
-        "editor.rulers": [80],
+        "editor.rulers": [
+            80
+        ],
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
 
-    // Python.
+    // Python /////////////////////////////////////////////////////////////////
+    // Analysis exclusions.
+    "python.analysis.exclude": [
+        "**/migrations",
+        "**/__pycache__",
+        ".git"
+    ],
+    "python.analysis.ignore": [
+        ".venv/**",
+        "**/site-packages/**",
+        "venv/**",
+        "env/**"
+    ],
+    // Code diagnostics and analysis.
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportAttributeAccessIssue": "none",
+        "reportOptionalMemberAccess": "none",
+        "reportOptionalSubscript": "warning",
+        "reportOptionalOperand": "warning",
+        "reportOptionalCall": "warning"
+    },
+    "python.linting.enabled": false,
+    "python.linting.lintOnSave": false,
+    "python.analysis.indexing": false,
+    "python.analysis.typeCheckingMode": "basic",
+    "python.languageServer": "Pylance",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.inlayHints.functionReturnTypes": true,
+    "python.analysis.inlayHints.variableTypes": true,
+    // Pylance settings.
+    "python.analysis.diagnosticMode": "openFilesOnly",
     "python.analysis.extraPaths": [
         "./",
         "./src/",
         "./src/apps/"
     ],
-    "python.linting.enabled": false,
-    "python.linting.lintOnSave": false,
-    "python.analysis.indexing": false,
-    "python.analysis.autoImportCompletions": false,
 
-    "[python]": {
-        "editor.defaultFormatter": "charliermarsh.ruff",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {}
-    },
-
-    // Linters.
-    "ruff.organizeImports": false,
-    "ruff.configuration": "file",
-    "ruff.fallbackConfiguration": "{ ling-length: 79, target-version: 'py38', show-source: true, isort.lines-after-imports: 2, flake8-quotes.inline-quotes: 'single' }",
-    "isort.args": [
-        "--profile",
-        "ruff"
+    // MyPy settings.
+    "python.linting.mypyArgs": [
+        "--ignore-missing-imports",
+        "--follow-imports=silent",
+        "--show-column-numbers",
+        "--allow-untyped-defs",
+        "--allow-incomplete-defs",
+        "--exclude=*/.venv/*",
+        "--exclude=*/venv/*",
+        "--exclude=*/env/*"
     ],
     "mypy-type-checker.path": [
         "${workspaceFolder}/.venv/bin/mypy"
@@ -162,134 +209,210 @@
         "--config-file=.mypy.ini"
     ],
 
-    // Arduino.
+    // Python code formatting.
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        }
+    },
+    "python.formatting.provider": "none",
+    "black-formatter.args": [
+        "--line-length",
+        "88"
+    ],
+    // Arduino ////////////////////////////////////////////////////////////////
     "arduino.useArduinoCli": true,
     "arduino.additionalUrls": [
         "/Users/vals/Documents/Arduino/libraries/"
     ],
 
-    // DjLint.
-    "djlint.ignore": ["H021"],
+    // Django/DjLint //////////////////////////////////////////////////////////
+    "djlint.ignore": [
+        "H021"
+    ],
     "djlint.profile": "django",
     "djlint.maxLineLength": 120,
 
-    // YAML.
+    // YAML ///////////////////////////////////////////////////////////////////
     "[yaml]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
         "editor.detectIndentation": false,
-        "editor.rulers": [0]
+        "editor.rulers": [
+            0
+        ]
     },
 
-    // TypeScript.
+    // TypeScript /////////////////////////////////////////////////////////////
     "typescript.preferences.importModuleSpecifierEnding": "js",
+    "typescript.updateImportsOnFileMove.enabled": "always",
     "[typescript]": {
         "editor.tabSize": 2,
         "editor.formatOnSave": true,
-        "editor.rulers": [80],
+        "editor.rulers": [
+            80
+        ],
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
 
-    // JavaScript.
+    // JavaScript /////////////////////////////////////////////////////////////
     "javascript.preferences.importModuleSpecifierEnding": "js",
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "prompt",
     "[javascript]": {
         "editor.tabSize": 4,
-        "editor.rulers": [80],
+        "editor.rulers": [
+            80
+        ],
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
 
-    // GoLang.
+    // GoLang /////////////////////////////////////////////////////////////////
     "go.lintOnSave": "off",
     "go.formatTool": "goimports",
     "go.useLanguageServer": true,
+    "go.toolsEnvVars": {
+        "GO11MODULE": "on"
+    },
+    "go.lintTool": "golint",
     "[go]": {
         "editor.insertSpaces": true,
         "editor.formatOnSave": true,
         "editor.codeActionsOnSave": {
             "source.organizeImports": "explicit"
         },
-        "editor.rulers": [80, 81]
+        "editor.rulers": [
+            80,
+            81
+        ]
     },
-    "go.toolsEnvVars": {
-        "GO11MODULE": "on"
-    },
-    "go.lintTool": "golint",
 
-    // JSON.
+    // JSON ///////////////////////////////////////////////////////////////////
     "[json]": {
-        "editor.rulers": [0]
+        "editor.rulers": [
+            0
+        ]
     },
 
-    // Markdown.
+    // Markdown ///////////////////////////////////////////////////////////////
     "[markdown]": {
         "editor.wordWrap": "bounded",
         "editor.wordWrapColumn": 100,
-        "editor.rulers": [100, 101]
+        "editor.rulers": [
+            100,
+            101
+        ]
     },
 
-    // HTML.
+    // HTML ///////////////////////////////////////////////////////////////////
     "html.autoClosingTags": false,
     "html.format.wrapLineLength": 150,
     "[html]": {
-        "editor.rulers": [100, 150],
+        "editor.rulers": [
+            100,
+            150
+        ],
         "editor.defaultFormatter": "vscode.html-language-features",
         "editor.tabSize": 4
     },
 
-    // Jinja.
+    // Jinja //////////////////////////////////////////////////////////////////
     "[jinja]": {
-        "editor.rulers": [80, 120, 121],
+        "editor.rulers": [
+            80,
+            120,
+            121
+        ],
         "editor.tabSize": 4,
         "editor.defaultFormatter": "vscode.html-language-features"
     },
 
-    // Django-HTML.
+    // Django-HTML ////////////////////////////////////////////////////////////
     "[django-html]": {
         "editor.detectIndentation": false,
-        "editor.rulers": [80, 120, 121],
+        "editor.rulers": [
+            80,
+            120,
+            121
+        ],
         "editor.tabSize": 4
     },
 
-    // SQL.
+    // SQL ////////////////////////////////////////////////////////////////////
     "[sql]": {
-        "editor.rulers": [0]
+        "editor.rulers": [
+            0
+        ]
     },
 
-    // CSS/SCSS.
+    // CSS/SCSS ///////////////////////////////////////////////////////////////
     "[css]": {
-        "editor.rulers": [80, 120],
+        "editor.rulers": [
+            80,
+            120
+        ],
         "editor.tabSize": 4,
         "editor.defaultFormatter": "vscode.css-language-features"
     },
     "[scss]": {
-        "editor.rulers": [80, 120],
+        "editor.rulers": [
+            80,
+            120
+        ],
         "editor.tabSize": 4
     },
 
-    // MictoPico.
+    // EXTENSION SETTINGS /////////////////////////////////////////////////////
+    // MicroPico //////////////////////////////////////////////////////////////
     "micropico.autoConnect": false,
     "micropico.manualComDevice": "/dev/ttyACM0",
 
-    // Smart-tab.
+    // Smart-Tab //////////////////////////////////////////////////////////////
     "smart-tabs.activeFirst": true,
     "smart-tabs.fixedTabs": 3,
     "smart-tabs.debounceDelay": 300,
     "smart-tabs.reactionEvent": "onedit",
 
-    // cSpell.
+    // cSpell (Spell Checking) ////////////////////////////////////////////////
     "cSpell.language": "en,uk",
     "cSpell.diagnosticLevel": "Hint",
     "cSpell.userWords": [
-        "Adafruit", "akram", "apikey", "autopep", "autopk", "countup", "endfor",
-        "EXXX", "goimports", "golint", "goloop", "iban", "IMEI", "IMSI", "ipynb",
-        "isort", "itercompat", "jsoniter", "modeltranslation", "mohd", "Monokai",
-        "MSIN", "mypy", "onedit", "prec", "pylint", "rgex", "SHID", "sorl",
-        "subclasscheck", "Swal", "venv", "WXXX"
+        "Adafruit",
+        "akram",
+        "apikey",
+        "autopep",
+        "autopk",
+        "countup",
+        "endfor",
+        "EXXX",
+        "goimports",
+        "golint",
+        "goloop",
+        "iban",
+        "IMEI",
+        "IMSI",
+        "ipynb",
+        "isort",
+        "itercompat",
+        "jsoniter",
+        "modeltranslation",
+        "mohd",
+        "Monokai",
+        "MSIN",
+        "mypy",
+        "onedit",
+        "prec",
+        "pylint",
+        "rgex",
+        "SHID",
+        "sorl",
+        "subclasscheck",
+        "Swal",
+        "venv",
+        "WXXX"
     ],
 
-    // Security.
+    // SECURITY SETTINGS //////////////////////////////////////////////////////
     "security.workspace.trust.untrustedFiles": "open"
-
 }
